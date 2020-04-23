@@ -54,7 +54,7 @@ math = Math.floor(2.89999999);
 math = Math.min(2, 5);
 math = Math.max(2,33,4,1,55,6,3,-2);
 math = Math.random();
-console.log(math);
+//console.log(math);
 
 //-----------------------Stings--------------------------------------
 
@@ -103,3 +103,74 @@ str = firstName.includes('W'); //True
 str = firstName.includes('w'); //False
 
 console.log(str);
+
+// -------------------------Template Literals ------------------------------------
+const names = "Shivu";
+const ages = 25;
+const city = "chennai";
+// Without template strings (es5)
+html = '<ul>' +
+       '<li>Name: ' + name + '</li>' +
+       '<li>Age: ' + age + '</li>' +
+       '<li>City: ' + city + '</li>' +
+       '</ul>';
+
+// With template strings (es6)
+
+function hello(){
+  return 'hello';
+}
+
+html = `
+  <ul>
+    <li>Name: ${name}</li>
+    <li>Age: ${age}</li>
+    <li>City: ${city}</li>
+    <li>${2 + 2}</li>
+    <li>${hello()}</li>
+    <li>${age > 30 ? 'Over 30' : 'Under 30'}</li>
+  </ul>
+`;
+
+//document.body.innerHTML = html;
+
+//----------------------------------------Array & Array Methods -----------------------------
+const numbers = [1,2,4,3,4,6,7,1,9];
+const numbers2 = new Array(22,45,33,76,54);
+const fruit = ['Apple', 'Banana', 'Orange', 'Pear'];
+const mixed = [22, 'Hello', true, undefined, null, {a:1, b:1}, new Date()];
+console.log(mixed);
+
+let arry;
+arry = numbers.length; // Get array length
+arry = Array.isArray(numbers); // Check if is array
+arry = numbers[3];
+// Insert into array
+//numbers[2] = 100;
+arry = numbers.indexOf(4);
+
+numbers.push(250); //Add on to end
+numbers.unshift(200); //Add on to front
+numbers.pop(); // Take off from end
+numbers.shift(); // Take off from front
+numbers.splice(1, 3); // Splice values
+numbers.reverse();
+
+// Sorting arrays
+val = fruit.sort();
+
+val = numbers.sort(function(x, y){
+  return x - y;
+});
+
+function over50(num){
+  return num > 5;
+}
+
+val = numbers.find(over50); //Find method
+
+val = numbers.find(num => {
+     return num > 5;
+});
+
+console.log(val);
