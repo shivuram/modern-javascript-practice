@@ -174,3 +174,62 @@ val = numbers.find(num => {
 });
 
 console.log(val);
+
+// --------------------------Object Literals --------------------------------------------
+const person = {
+    firstName: 'Shivu',
+    lastName: 'Ram',
+    age: 25,
+    hobbies: [1,2,3],
+    address: {
+        city: 'Chennai',
+        State: 'TN'
+    },
+  getBirthYear: function(){
+    return 2020 - this.age;
+  }
+}; //a semicolon is used after {} if the {} are on the right side of the equal sign!
+
+console.log(person.getBirthYear());
+
+const people = [
+  {name: 'John', age: 30},
+  {name: 'Mike', age: 23},
+  {name: 'Nancy', age: 40}
+];
+
+for(let i = 0; i < people.length; i++){
+  //console.log(people[i].name);
+}
+
+// --------------------------------------Function Introduction ----------------------------------
+
+// FUNCTION DECLARATIONS
+
+function greet(firstName = 'John', lastName = 'Doe'){
+  // if(typeof firstName === 'undefined'){firstName = 'John'}
+  // if(typeof lastName === 'undefined'){lastName = 'Doe'}
+  //console.log('Hello');
+  return 'Hello ' + firstName + ' ' + lastName;
+  alert('Hello'); //return statement just end the function execution so after that not executed
+}
+
+console.log(greet());
+
+// FUNCTION EXPRESIONS
+
+const square = function(x = 3){
+  return x*x;
+};
+
+console.log(square());
+
+// IMMIDIATLEY INVOKABLE FUNCTION EXPRESSIONS - IIFEs
+
+(function(){
+  console.log('IIFE Ran..');
+})();
+
+(function(name){
+  console.log('Hello '+ name);
+})('Brad');
