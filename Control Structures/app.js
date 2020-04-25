@@ -29,7 +29,20 @@ for(let i = 0; i < 10; i++){
 const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
 
 for(let i = 0; i < cars.length; i++){
-  //console.log(cars[i]);
+  console.log(cars[i]);
+}
+
+// FOR OF LOOP //Loop through array
+for(const element of cars){
+    console.log(element);
+}
+
+//Not having access to indexes in above approach, then we need to do manually
+let i = 0;
+for(const element of cars){
+    console.log(element);
+    console.log(i);
+    i++;
 }
 
 // FOREACH
@@ -50,9 +63,10 @@ const ids = users.map(function(user){
   return user.id;
 });
 
-console.log(ids); //Getting Array
+//console.log(ids); //Getting Array
 
-// FOR IN LOOP
+// FOR IN LOOP 
+//loops through the properties of an object
 const user = {
   firstName: 'John', 
   lastName: 'Doe',
