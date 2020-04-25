@@ -29,25 +29,25 @@ for(let i = 0; i < 10; i++){
 const cars = ['Ford', 'Chevy', 'Honda', 'Toyota'];
 
 for(let i = 0; i < cars.length; i++){
-  console.log(cars[i]);
+  //console.log(cars[i]);
 }
 
 // FOR OF LOOP //Loop through array
 for(const element of cars){
-    console.log(element);
+    //console.log(element);
 }
 
 //Not having access to indexes in above approach, then we need to do manually
 let i = 0;
 for(const element of cars){
-    console.log(element);
-    console.log(i);
+    //console.log(element);
+    //console.log(i);
     i++;
 }
 
-// FOREACH
+// FOREACH --> Perform Specific Action on each array
 cars.forEach(function(car, index, array){
-  console.log(`${index} : ${car}`);
+  //console.log(`${index} : ${car}`);
   //console.log(array);
 });
 
@@ -75,4 +75,28 @@ const user = {
 
 for(let x in user){
   console.log(`${x} : ${user[x]}`);
+}
+
+//Nested loops
+
+const battleLog = [
+    {
+        firstName: 'John', 
+        lastName: 'Doe',
+        age: 40
+    },
+    {
+        firstName: 'Shivu', 
+        lastName: 'Ram',
+        age: 20
+    }
+]
+
+let j = 0;
+for(const element of battleLog){
+    console.log(`#${j}`);
+    for(const key in element){
+        console.log(`${key} => ${element[key]}`);
+    }
+    j++;
 }
