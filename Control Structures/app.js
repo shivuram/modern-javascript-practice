@@ -100,3 +100,57 @@ for(const element of battleLog){
     }
     j++;
 }
+
+// ------------------------------------- Error Handling --------------------------------------
+
+try {
+  nonExistentFunction();
+  alert('Can u execute Me'); //Not executes remaining try block after executing error in previous line
+}
+catch(error) {
+  console.error(error);
+  console.log(`${error.name}: Function is not defined`);
+  // expected output: ReferenceError: nonExistentFunction is not defined
+  // Note - error messages will vary depending on browser
+}
+finally {
+    console.log('finally'); //Execute irrespective of any errror found in try catch
+}
+
+console.log('Program Continues....');
+
+//Optional Catch Binding. If we don’t need error details, catch may omit it:
+//This is a recent addition to the language. Old browsers may need polyfills.
+
+// try {
+//     nonExistentFUnction();
+// } 
+// catch {
+
+// }
+
+function func() {
+    try {
+        return 1;
+    } catch(e) {
+        /* ....*/
+    } finally {
+        alert( 'finally' );
+    }
+}
+
+alert( func() ); // first works alert from finally, and then this one
+
+//Use catch block to provide fallback logic
+
+var xyz = 5;
+
+try {
+    nonExistentFunction();
+} catch(error) {
+    console.log(error);
+    xyz = 100; //fallback logic
+    alert('Something Wrong, So add xyz to 100');
+}
+
+console.log(xyz);
